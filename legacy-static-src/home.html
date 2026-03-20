@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pagina Inicial</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__row site-header__row--top">
+        <div class="site-header__logo">Logo/Nada</div>
+        <h1 class="site-header__title">Nome Empresa</h1>
+        <div class="site-header__contacts" aria-label="Contact links">
+          <span class="site-header__contacts-label">Formas de Contato:</span>
+          <a class="site-header__icon-link" href="https://instagram.com/yourprofile" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a class="site-header__icon-link" href="mailto:hello@example.com" aria-label="Email">
+            <ion-icon name="mail-sharp"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <nav class="site-header__row site-header__row--bottom site-header__nav" aria-label="Main navigation">
+        <a href="home.html" class="is-active">Home</a>
+        <a href="web.html">Websites</a>
+        <a href="automacao.html">Automação</a>
+        <a href="precos.html">Preços</a>
+        <a href="sobre.html">Sobre</a>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="content">
+    <section id="section-web" class="content-section content-section--web">
+      <h2>Trabalhos Feitos Anteriormente</h2>
+      <h3 class="section-subtitle">Trabalhos Feitos:</h3>
+      <div class="carousel" aria-label="Carrossel de trabalhos realizados">
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="carousel-item">
+              <a href="https://example.com/projeto1" target="_blank" rel="noreferrer">
+                <img src="../images/img1.jpg" alt="Trabalho web 1" />
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://example.com/projeto2" target="_blank" rel="noreferrer">
+                <img src="../images/img6.jpg" alt="Trabalho web 2" />
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://example.com/projeto3" target="_blank" rel="noreferrer">
+                <img src="../images/img2.jpg" alt="Trabalho web 3" />
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://example.com/projeto4" target="_blank" rel="noreferrer">
+                <img src="../images/img7.jpg" alt="Trabalho web 4" />
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://example.com/projeto5" target="_blank" rel="noreferrer">
+                <img src="../images/img3.jpg" alt="Trabalho web 5" />
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://example.com/projeto6" target="_blank" rel="noreferrer">
+                <img src="../images/img8.jpg" alt="Trabalho web 1" />
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://example.com/projeto7" target="_blank" rel="noreferrer">
+                <img src="../images/img4.jpg" alt="Trabalho web 2" />
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://example.com/projeto8" target="_blank" rel="noreferrer">
+                <img src="../images/img9.jpg" alt="Trabalho web 3" />
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://example.com/projeto9" target="_blank" rel="noreferrer">
+                <img src="../images/img5.jpg" alt="Trabalho web 4" />
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://example.com/projeto10" target="_blank" rel="noreferrer">
+                <img src="../images/img10.jpg" alt="Trabalho web 5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-automacao" class="content-section content-section--automacao">
+      <h2>Sistemas de Automação</h2>
+      <div class="content-grid-2 content-grid-2--align-center">
+        <div>
+          <p>
+            Descreva aqui as soluções de automação que você oferece, como integrações,
+            rotinas automáticas e redução de tarefas manuais para os seus clientes.
+          </p>
+        </div>
+        <div class="automacao-gif-wrap" aria-label="GIF de automação">
+          <img src="../gif/test_gif.gif" alt="Automação em ação" class="automacao-gif" />
+        </div>
+      </div>
+    </section>
+
+    <section id="section-sobre" class="content-section content-section--sobre">
+      <h2>Sobre Nós</h2>
+      <div class="content-grid-2">
+        <div>
+          <p>
+            Aqui você pode apresentar um resumo da empresa, da sua história e da forma
+            como trabalha com os clientes no dia a dia.
+          </p>
+        </div>
+        <div>
+          <p>
+            Use este espaço para reforçar diferenciais, valores e a forma como os seus
+            serviços ajudam pessoas e negócios a alcançarem resultados.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+    (function () {
+      const carousels = document.querySelectorAll(".carousel");
+      const visibleCount = 3;
+      const transitionMs = 600;
+
+      carousels.forEach(function (carousel) {
+        const track = carousel.querySelector(".carousel-track");
+        if (!track) return;
+
+        const items = Array.from(track.children);
+        const originalCount = items.length;
+        if (originalCount < visibleCount) return;
+
+        for (var i = 0; i < originalCount; i++) {
+          track.appendChild(items[i].cloneNode(true));
+        }
+
+        let index = 0;
+        let resetTimeout = null;
+
+        function update(noTransition) {
+          if (noTransition) track.style.transition = "none";
+          var offset = (100 / visibleCount) * index;
+          track.style.transform = "translateX(-" + offset + "%)";
+          if (noTransition) {
+            track.offsetHeight;
+            track.style.transition = "";
+          }
+        }
+
+        carousel.addEventListener("mouseenter", function () {
+          carousel.classList.add("carousel--paused");
+        });
+        carousel.addEventListener("mouseleave", function () {
+          carousel.classList.remove("carousel--paused");
+        });
+
+        setInterval(function () {
+          if (carousel.classList.contains("carousel--paused")) return;
+          if (resetTimeout) return;
+
+          index++;
+          if (index >= originalCount) {
+            update(false);
+            resetTimeout = setTimeout(function () {
+              index = 0;
+              update(true);
+              resetTimeout = null;
+            }, transitionMs + 50);
+          } else {
+            update(false);
+          }
+        }, 5000);
+
+        update(false);
+      });
+    })();
+  </script>
+</body>
+</html>
