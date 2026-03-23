@@ -1,175 +1,102 @@
-import { Link } from 'react-router-dom'
-import {
-  ShoppingCart, Cpu, Wrench, Briefcase, PartyPopper,
-  UtensilsCrossed, GraduationCap, Truck, Package,
-  Building2, Scissors, ArrowRight, Sparkles
-} from 'lucide-react'
 
-const vitrines = [
-  {
-    title: 'Supermercado',
-    desc: 'Ofertas, categorias de produtos, delivery e programa de fidelidade.',
-    path: '/supermercado',
-    icon: ShoppingCart,
-    color: 'from-green-500 to-emerald-600',
-    bg: 'bg-green-50',
-  },
-  {
-    title: 'Comércio Focado',
-    desc: 'Peças, eletrônicos e gráfica com catálogo e busca inteligente.',
-    path: '/comercio-focado',
-    icon: Cpu,
-    color: 'from-blue-500 to-cyan-600',
-    bg: 'bg-blue-50',
-  },
-  {
-    title: 'Serviço Individual',
-    desc: 'Portfólio profissional, agendamento e depoimentos de clientes.',
-    path: '/servico-individual',
-    icon: Wrench,
-    color: 'from-violet-500 to-purple-600',
-    bg: 'bg-violet-50',
-  },
-  {
-    title: 'Consultoria',
-    desc: 'Cases de sucesso, metodologias e captação de leads qualificados.',
-    path: '/consultoria',
-    icon: Briefcase,
-    color: 'from-slate-600 to-gray-800',
-    bg: 'bg-slate-50',
-  },
-  {
-    title: 'Eventos',
-    desc: 'Calendário de eventos, galeria, inscrições e informações de local.',
-    path: '/eventos',
-    icon: PartyPopper,
-    color: 'from-pink-500 to-rose-600',
-    bg: 'bg-pink-50',
-  },
-  {
-    title: 'Restaurante',
-    desc: 'Cardápio digital, reservas online, ambiente e horários.',
-    path: '/restaurante',
-    icon: UtensilsCrossed,
-    color: 'from-amber-500 to-orange-600',
-    bg: 'bg-amber-50',
-  },
-  {
-    title: 'Ensino',
-    desc: 'Cursos, matrícula online, grade curricular e depoimentos.',
-    path: '/ensino',
-    icon: GraduationCap,
-    color: 'from-indigo-500 to-blue-700',
-    bg: 'bg-indigo-50',
-  },
-  {
-    title: 'Logística',
-    desc: 'Rastreamento de cargas, frota, cobertura e cotações.',
-    path: '/logistica',
-    icon: Truck,
-    color: 'from-teal-500 to-green-700',
-    bg: 'bg-teal-50',
-  },
-  {
-    title: 'Fornecedores',
-    desc: 'Catálogo B2B, preços por volume, parcerias e pedidos.',
-    path: '/fornecedores',
-    icon: Package,
-    color: 'from-orange-500 to-red-600',
-    bg: 'bg-orange-50',
-  },
-  {
-    title: 'Imobiliária',
-    desc: 'Listagem de imóveis, filtros avançados, tour virtual e contato.',
-    path: '/imobiliaria',
-    icon: Building2,
-    color: 'from-sky-500 to-blue-600',
-    bg: 'bg-sky-50',
-  },
-  {
-    title: 'Barbearia',
-    desc: 'Agendamento, serviços, galeria de cortes e equipe.',
-    path: '/barbearia',
-    icon: Scissors,
-    color: 'from-stone-600 to-neutral-800',
-    bg: 'bg-stone-50',
-  },
-]
+import Layout from '../components/Layout';
 
-export default function Home() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-primary-50">
-      <header className="relative overflow-hidden bg-gradient-to-r from-dark-900 via-dark-800 to-primary-900 text-white">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-primary-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-500 rounded-full blur-3xl" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm mb-8 animate-fade-in">
-            <Sparkles size={16} className="text-accent-400" />
-            <span>Portfólio de Templates</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-display mb-6 animate-fade-in-up">
-            Nossa <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-accent-400">Vitrine</span> Digital
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-            Explore os templates que criamos para diferentes segmentos. Cada página foi
-            desenhada para maximizar conversões e encantar seus clientes.
-          </p>
-          <div className="mt-10 flex justify-center gap-4 animate-fade-in-up animation-delay-400">
-            <div className="flex items-center gap-2 text-sm text-gray-400">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              {vitrines.length} templates disponíveis
+const Home = () => (
+  <Layout>
+    <section id="section-web" className="content-section content-section--web">
+      <h2>Trabalhos Feitos Anteriormente</h2>
+      <h3 className="section-subtitle">Trabalhos Feitos:</h3>
+      <div className="carousel" aria-label="Carrossel de trabalhos realizados">
+        <div className="carousel-viewport">
+          <div className="carousel-track">
+            <div className="carousel-item">
+              <a href="https://example.com/projeto1" target="_blank" rel="noreferrer">
+                <img src={`${import.meta.env.BASE_URL}images/img1.jpg`} alt="Trabalho web 1" />
+              </a>
+            </div>
+            <div className="carousel-item">
+              <a href="https://example.com/projeto2" target="_blank" rel="noreferrer">
+                <img src={`${import.meta.env.BASE_URL}images/img6.jpg`} alt="Trabalho web 2" />
+              </a>
+            </div>
+            <div className="carousel-item">
+              <a href="https://example.com/projeto3" target="_blank" rel="noreferrer">
+                <img src={`${import.meta.env.BASE_URL}images/img2.jpg`} alt="Trabalho web 3" />
+              </a>
+            </div>
+            <div className="carousel-item">
+              <a href="https://example.com/projeto4" target="_blank" rel="noreferrer">
+                <img src={`${import.meta.env.BASE_URL}images/img7.jpg`} alt="Trabalho web 4" />
+              </a>
+            </div>
+            <div className="carousel-item">
+              <a href="https://example.com/projeto5" target="_blank" rel="noreferrer">
+                <img src={`${import.meta.env.BASE_URL}images/img3.jpg`} alt="Trabalho web 5" />
+              </a>
+            </div>
+            <div className="carousel-item">
+              <a href="https://example.com/projeto6" target="_blank" rel="noreferrer">
+                <img src={`${import.meta.env.BASE_URL}images/img8.jpg`} alt="Trabalho web 1" />
+              </a>
+            </div>
+            <div className="carousel-item">
+              <a href="https://example.com/projeto7" target="_blank" rel="noreferrer">
+                <img src={`${import.meta.env.BASE_URL}images/img4.jpg`} alt="Trabalho web 2" />
+              </a>
+            </div>
+            <div className="carousel-item">
+              <a href="https://example.com/projeto8" target="_blank" rel="noreferrer">
+                <img src={`${import.meta.env.BASE_URL}images/img9.jpg`} alt="Trabalho web 3" />
+              </a>
+            </div>
+            <div className="carousel-item">
+              <a href="https://example.com/projeto9" target="_blank" rel="noreferrer">
+                <img src={`${import.meta.env.BASE_URL}images/img5.jpg`} alt="Trabalho web 4" />
+              </a>
+            </div>
+            <div className="carousel-item">
+              <a href="https://example.com/projeto10" target="_blank" rel="noreferrer">
+                <img src={`${import.meta.env.BASE_URL}images/img10.jpg`} alt="Trabalho web 5" />
+              </a>
             </div>
           </div>
         </div>
-      </header>
+      </div>
+    </section>
 
-      <main className="max-w-7xl mx-auto px-6 py-16 md:py-24">
-        <div className="mb-8 rounded-2xl border border-primary-100 bg-white p-5 shadow-sm">
-          <p className="text-sm md:text-base text-gray-700">
-            Quer ver a identidade do site antigo já integrada? Acesse a página{' '}
-            <Link to="/institucional" className="font-semibold text-primary-700 hover:underline">
-              Institucional
-            </Link>
-            .
+    <section id="section-automacao" className="content-section content-section--automacao">
+      <h2>Sistemas de Automação</h2>
+      <div className="content-grid-2 content-grid-2--align-center">
+        <div>
+          <p>
+            Descreva aqui as soluções de automação que você oferece, como integrações,
+            rotinas automáticas e redução de tarefas manuais para os seus clientes.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {vitrines.map((v, i) => {
-            const Icon = v.icon
-            return (
-              <Link
-                key={v.path}
-                to={v.path}
-                className="group relative bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-1 transition-all duration-500 animate-fade-in-up"
-                style={{ animationDelay: `${i * 80}ms`, opacity: 0, animationFillMode: 'forwards' }}
-              >
-                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${v.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon size={24} />
-                </div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-primary-600 transition-colors">
-                  {v.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                  {v.desc}
-                </p>
-                <div className="flex items-center gap-2 text-primary-600 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Ver template <ArrowRight size={14} />
-                </div>
-              </Link>
-            )
-          })}
+        <div className="automacao-gif-wrap" aria-label="GIF de automação">
+          <img src={`${import.meta.env.BASE_URL}gif/test_gif.gif`} alt="Automação em ação" className="automacao-gif" />
         </div>
-      </main>
+      </div>
+    </section>
 
-      <footer className="bg-dark-900 text-gray-400 py-12">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-sm">
-            &copy; {new Date().getFullYear()} Agência Digital — Todos os direitos reservados
+    <section id="section-sobre" className="content-section content-section--sobre">
+      <h2>Sobre Nós</h2>
+      <div className="content-grid-2">
+        <div>
+          <p>
+            Aqui você pode apresentar um resumo da empresa, da sua história e da forma
+            como trabalha com os clientes no dia a dia.
           </p>
         </div>
-      </footer>
-    </div>
-  )
-}
+        <div>
+          <p>
+            Use este espaço para reforçar diferenciais, valores e a forma como os seus
+            serviços ajudam pessoas e negócios a alcançarem resultados.
+          </p>
+        </div>
+      </div>
+    </section>
+  </Layout>
+);
+
+export default Home;
